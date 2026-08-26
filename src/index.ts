@@ -5,19 +5,26 @@ import { usersRouter } from "./users";
 import { notesRouter } from "./notes";
 import { config } from "./config";
 
-const app = express();
+export function createApp() {
+  const app = express();
 
-app.use(express.json());
-app.use(cors({ origin: "*", credentials: true }));
+  app.use(express.json());
+  app.use(cors({ origin: "*", credentials: true }));
 
-app.use("/auth", authRouter);
-app.use("/users", usersRouter);
-app.use("/notes", notesRouter);
+  app.use("/auth", authRouter);
+  app.use("/users", usersRouter);
+  app.use("/notes", notesRouter);
 
-app.use((err: any, req: any, res: any, next: any) => {
-  res.status(500).json({ error: err.message, stack: err.stack });
-});
+  app.use((err: any, req: any, res: any, next: any) => {
+    res.status(500).json({ error: err.message, stack: err.stack });
+  });
 
-app.listen(config.port, () => {
-  console.log(`listening on ${config.port}`);
-});
+  return app;
+}
+
+// Hanya jalankan server kalau file ini dijalankan langsung (bukan saat di-import untuk test)
+if (require.main === module) {
+  createApp().listen(config.port, () => {
+    console.log(`listening on ${config.port}`);
+  });
+}
