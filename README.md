@@ -32,20 +32,6 @@ src/
 tests/         The (minimal) test suite.
 ```
 
-## What to do (top-down, by priority)
+# Backend Engineer Case Study
 
-1. **`REVIEW.md` first (~30 min).** Write up the issues you'd flag in a PR: *what's wrong, why it matters, the fix,* and a priority (blocker / should-fix / nice-to-have). This is the most important deliverable.
-2. **Fix the highest-impact issues (~75 min).** You won't have time for everything — fix what most reduces real risk, and leave the rest documented in `REVIEW.md`. Choosing well *is* the test. If you improve a behavior, add or update a test to prove it.
-3. **One paragraph (~15 min)** in `REVIEW.md`: if this API were going to production tomorrow, what are the top three things you'd insist on first, and why?
-
-## Show your work
-
-Please include in `REVIEW.md`:
-- The output of `npm test` after your changes.
-- A short note on anything you'd have done with more time.
-
-## Submitting
-
-Push your branch (or send a patch) plus `REVIEW.md`. In the follow-up interview we'll screen-share your work and ask you to walk through your reasoning live — and possibly make a small change on the spot — so make sure the decisions are genuinely yours.
-
-Good luck — and remember, a focused fix of the riskiest few things with a clear writeup beats a rushed attempt to fix everything.
+Please see [REVIEW.md](./REVIEW.md) for the code review, findings, changes, and reasoning.
